@@ -27,6 +27,21 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "skipLibCheck": true,
+
+    "paths": {
+      "#core/*": ["./src/core/*"],
+
+      "#handler": ["./src/handlers/index"],
+      "#handler/*": ["./src/handlers/*"],
+      "#worker/*": ["./src/workers/*"],
+
+      "#structures/*": ["./src/structures/*"],
+      "#structures": ["./src/structures/index"],
+
+      "#app": ["./src/index"],
+      "#app/db": ["./src/database"],
+      "#app/env": ["./src/environment"]
+    }
   },
 
   "include": [
@@ -36,7 +51,6 @@
   ],
 
   "exclude": [
-    "node_modules",
-    ".example"
-  ],
+    "node_modules"
+  ]
 }

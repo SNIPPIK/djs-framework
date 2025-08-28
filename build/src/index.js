@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DjFramework = void 0;
+exports.DjsFramework = void 0;
 __exportStar(require("./handlers/commands"), exports);
 __exportStar(require("./handlers/events"), exports);
 __exportStar(require("./handlers/components"), exports);
@@ -28,7 +28,7 @@ const middlewares_1 = require("./handlers/middlewares");
 const components_1 = require("./handlers/components");
 const events_1 = require("./handlers/events");
 const node_path_1 = __importDefault(require("node:path"));
-class DjFramework {
+class DjsFramework {
     options;
     middlewares;
     components;
@@ -123,7 +123,7 @@ class DjFramework {
         return callback(ctx);
     };
 }
-exports.DjFramework = DjFramework;
+exports.DjsFramework = DjsFramework;
 function isBased(ctx) {
     const type = ctx.channel?.type;
     if (type !== undefined) {

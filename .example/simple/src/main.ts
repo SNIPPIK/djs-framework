@@ -1,11 +1,3 @@
-# djs-framework
-- Support: SlashCommand, Components (Buttons, Selectors), Middlewares, Events
-- Detail: Application User Commands, Guild Commands, Private Commands
-
-
-### Fast Example
-- For more details see [here](.example)
-```ts
 import { Client } from "discord.js";
 import { DjsFramework } from "djs-framework";
 
@@ -53,4 +45,3 @@ const djs_frame = new DjsFramework({
 client.login("").then(() => {
     djs_frame.register(client);
 });
-```

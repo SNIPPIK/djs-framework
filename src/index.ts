@@ -13,9 +13,9 @@ import path from "node:path";
 /**
  * @author SNIPPIK
  * @description Интерфейс для создания main класса
- * @interface DjFrameworkOptions
+ * @interface DjsFrameworkOptions
  */
-interface DjFrameworkOptions {
+interface DjsFrameworkOptions {
     // Пути для загрузки
     locations: {
         base: string,
@@ -42,7 +42,7 @@ interface DjFrameworkOptions {
  * @description Класс с модулями
  * @public
  */
-export class DjFramework {
+export class DjsFramework {
     public middlewares: Middlewares;
     public components: Components;
     public commands: Commands;
@@ -53,7 +53,7 @@ export class DjFramework {
      * @param options - Пути для загрузки
      * @public
      */
-    public constructor(protected options: DjFrameworkOptions) {
+    public constructor(protected options: DjsFrameworkOptions) {
         if (options.locations && options.locations.base) {
             // Загружаем события
             if (options.locations.events) {
