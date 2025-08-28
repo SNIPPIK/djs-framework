@@ -18,6 +18,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DjFramework = void 0;
+__exportStar(require("./handlers/commands"), exports);
+__exportStar(require("./handlers/events"), exports);
+__exportStar(require("./handlers/components"), exports);
 const discord_js_1 = require("discord.js");
 const commands_1 = require("./handlers/commands");
 const middlewares_1 = require("./handlers/middlewares");
@@ -130,7 +133,3 @@ function isBased(ctx) {
     }
     return "public";
 }
-__exportStar(require("./handlers/middlewares"), exports);
-__exportStar(require("./handlers/commands"), exports);
-__exportStar(require("./handlers/events"), exports);
-__exportStar(require("./handlers/components"), exports);

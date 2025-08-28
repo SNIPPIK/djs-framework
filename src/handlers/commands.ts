@@ -611,3 +611,5 @@ export function Permissions(permissions: BaseCommand["permissions"]) {
             permissions = permissions;
         };
 }
+
+export * from "./middlewares";

@@ -1,3 +1,7 @@
+export * from "./handlers/commands";
+export * from "./handlers/events";
+export * from "./handlers/components";
+
 import { AnySelectMenuInteraction, AutocompleteInteraction, ButtonInteraction, ChannelType, ChatInputCommandInteraction, Client, CommandInteraction, InteractionType } from "discord.js";
 import { Commands, SubCommand } from "./handlers/commands";
 import { Middlewares } from "./handlers/middlewares";
@@ -220,10 +224,3 @@ function isBased(ctx: CommandInteraction) {
     // Если используется на стороннем сервере
     return "public";
 }
-
-
-export * from "./handlers/middlewares";
-//@ts-ignore
-export * from "./handlers/commands";
-export * from "./handlers/events";
-export * from "./handlers/components";
