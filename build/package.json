@@ -1,0 +1,26 @@
+{
+    "name": "djs-framework",
+    "version": "0.0.1",
+    "homepage": "https://github.com/SNIPPIK/djs-framework",
+    "bugs": "https://github.com/SNIPPIK/djs-framework/issues",
+    "author": {
+        "name": "SNIPPIK",
+        "url": "https://github.com/SNIPPIK"
+    },
+    "license": "BSD-3-Clause",
+    "preferGlobal": true,
+    "engineStrict": true,
+    "types": "src/index.ts",
+    "main": "build/src/index.js",
+    "dependencies": {
+        "discord-api-types": "^0.38.21",
+        "discord.js": "^14.22.1"
+    },
+    "devDependencies": {
+        "@types/node": "^24.3.0",
+        "typescript": "^5.9.2"
+    },
+    "scripts": {
+        "build": "tsc"
+    }
+}

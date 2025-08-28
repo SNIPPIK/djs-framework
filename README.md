@@ -1,2 +1,4 @@
-# djs-framework
-A framework that simplifies the process of creating commands, components (buttons, selectors), events, etc.
+# djs-framework | WIP
+- Simple and better handler framework!
+- Works on decorators
+- Very fast
