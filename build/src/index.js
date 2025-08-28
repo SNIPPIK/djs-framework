@@ -21,6 +21,7 @@ exports.DjFramework = void 0;
 __exportStar(require("./handlers/commands"), exports);
 __exportStar(require("./handlers/events"), exports);
 __exportStar(require("./handlers/components"), exports);
+__exportStar(require("./utils/Assign"), exports);
 const discord_js_1 = require("discord.js");
 const commands_1 = require("./handlers/commands");
 const middlewares_1 = require("./handlers/middlewares");

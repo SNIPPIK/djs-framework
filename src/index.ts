@@ -1,6 +1,7 @@
 export * from "./handlers/commands";
 export * from "./handlers/events";
 export * from "./handlers/components";
+export * from "./utils/Assign";
 
 import { AnySelectMenuInteraction, AutocompleteInteraction, ButtonInteraction, ChannelType, ChatInputCommandInteraction, Client, CommandInteraction, InteractionType } from "discord.js";
 import { Commands, SubCommand } from "./handlers/commands";
