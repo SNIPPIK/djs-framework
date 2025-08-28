@@ -1,4 +1,4 @@
-import { Assign, Event } from "djs-framework"
+import { Assign, Event } from "snpk-djs-framework"
 import { Events } from "discord.js";
 
 /**

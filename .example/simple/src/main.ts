@@ -1,5 +1,5 @@
 import { Client } from "discord.js";
-import { DjsFramework } from "djs-framework";
+import { DjsFramework } from "snpk-djs-framework";
 
 const client = new Client({
     // Права бота

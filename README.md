@@ -1,4 +1,4 @@
-# djs-framework
+# Simple framework for discord.js
 - Support: SlashCommand, Components (Buttons, Selectors), Middlewares, Events
 - Detail: Application User Commands, Guild Commands, Private Commands
 
@@ -7,7 +7,7 @@
 - For more details see [here](.example)
 ```ts
 import { Client } from "discord.js";
-import { DjsFramework } from "djs-framework";
+import { DjsFramework } from "snpk-djs-framework";
 
 const client = new Client({
     // Права бота

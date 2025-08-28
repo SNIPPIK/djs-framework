@@ -1,4 +1,4 @@
-import { Command, Declare, Options, Middlewares, Permissions, CommandContext } from "djs-framework"
+import { Command, Declare, Options, Middlewares, Permissions, CommandContext } from "snpk-djs-framework"
 import { ApplicationCommandOptionType } from "discord.js";
 
 @Declare({

@@ -1,4 +1,4 @@
-import { DeclareComponent, Middlewares, Component } from "djs-framework"
+import { DeclareComponent, Middlewares, Component } from "snpk-djs-framework"
 
 
 @DeclareComponent({

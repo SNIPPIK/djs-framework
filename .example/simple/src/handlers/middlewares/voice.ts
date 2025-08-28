@@ -1,5 +1,5 @@
 import { Colors, CommandInteraction } from "discord.js";
-import { Assign, middleware } from "djs-framework"
+import { Assign, middleware } from "snpk-djs-framework"
 
 /**
  * @author SNIPPIK
