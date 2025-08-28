@@ -19,20 +19,20 @@ interface DjsFrameworkOptions {
     // Пути для загрузки
     locations: {
         base: string,
-        components: string,
-        commands: string,
-        events: string,
-        middlewares: string
+        components?: string,
+        commands?: string,
+        events?: string,
+        middlewares?: string
     }
 
     // Список разработчиков
     ownerIDs: string[];
 
     // Возвраты ошибок
-    failCallbacks: {
-        onDontOwner: (ctx: ChatInputCommandInteraction) => void;
-        onPermissionsUser: (ctx: ChatInputCommandInteraction) => void;
-        onPermissionsClient: (ctx: ChatInputCommandInteraction) => void;
+    failCallbacks?: {
+        onDontOwner?: (ctx: ChatInputCommandInteraction) => void;
+        onPermissionsUser?: (ctx: ChatInputCommandInteraction) => void;
+        onPermissionsClient?: (ctx: ChatInputCommandInteraction) => void;
     }
 }
 
@@ -119,7 +119,7 @@ export class DjsFramework {
         if (!command || (command.owner && !this.options.ownerIDs.includes(ctx.member.user.id))) {
             this.commands.remove(ctx.client, ctx.commandGuildId, ctx.commandId);
 
-            return this.options.failCallbacks.onDontOwner(ctx);
+            return this.options?.failCallbacks?.onDontOwner?.(ctx);
         }
 
         // Проверка middleware
@@ -135,12 +135,12 @@ export class DjsFramework {
 
             // Проверка прав пользователя
             if (userPerms?.length && !userPerms.every(perm => ctx.member?.permissions?.["has"](perm))) {
-                return this.options.failCallbacks.onPermissionsUser(ctx);
+                return this.options?.failCallbacks?.onPermissionsUser(ctx);
             }
 
             // Проверка прав бота
             if (botPerms?.length && !botPerms.every(perm => ctx.guild?.members.me?.permissionsIn(ctx.channel)?.has(perm))) {
-                return this.options.failCallbacks.onPermissionsClient(ctx);
+                return this.options?.failCallbacks?.onPermissionsClient?.(ctx);
             }
         }
 

@@ -73,7 +73,7 @@ class DjsFramework {
         const command = this.commands.get(ctx.commandName);
         if (!command || (command.owner && !this.options.ownerIDs.includes(ctx.member.user.id))) {
             this.commands.remove(ctx.client, ctx.commandGuildId, ctx.commandId);
-            return this.options.failCallbacks.onDontOwner(ctx);
+            return this.options?.failCallbacks?.onDontOwner?.(ctx);
         }
         else if (command.middlewares?.length > 0) {
             for (const rule of this.middlewares.array) {
@@ -84,10 +84,10 @@ class DjsFramework {
         else if (command.permissions && isBased(ctx) === "guild") {
             const { user: userPerms, client: botPerms } = command.permissions;
             if (userPerms?.length && !userPerms.every(perm => ctx.member?.permissions?.["has"](perm))) {
-                return this.options.failCallbacks.onPermissionsUser(ctx);
+                return this.options?.failCallbacks?.onPermissionsUser(ctx);
             }
             if (botPerms?.length && !botPerms.every(perm => ctx.guild?.members.me?.permissionsIn(ctx.channel)?.has(perm))) {
-                return this.options.failCallbacks.onPermissionsClient(ctx);
+                return this.options?.failCallbacks?.onPermissionsClient?.(ctx);
             }
         }
         const subcommand = command.options?.find((sub) => sub.name === ctx.options["_subcommand"] && "run" in sub);
