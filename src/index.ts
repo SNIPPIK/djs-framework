@@ -220,3 +220,10 @@ function isBased(ctx: CommandInteraction) {
     // Если используется на стороннем сервере
     return "public";
 }
+
+
+export * from "./handlers/middlewares";
+//@ts-ignore
+export * from "./handlers/commands";
+export * from "./handlers/events";
+export * from "./handlers/components";

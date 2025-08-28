@@ -5,7 +5,6 @@ import { handler } from "../utils/handler";
  * @author SNIPPIK
  * @description Доступные проверки
  * @type RegisteredMiddlewares
- * @public
  */
 export type RegisteredMiddlewares = string;
 

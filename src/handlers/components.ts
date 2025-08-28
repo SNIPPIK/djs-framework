@@ -1,5 +1,5 @@
 import { AnySelectMenuInteraction, ButtonInteraction } from "discord.js";
-import { RegisteredMiddlewares } from "./commands";
+import { RegisteredMiddlewares } from "./middlewares";
 import { handler } from "../utils/handler";
 
 /**

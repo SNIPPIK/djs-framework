@@ -4,6 +4,7 @@ import {
 } from "discord.js";
 import type { Locale, LocalizationMap, Permissions } from "discord-api-types/v10";
 import {handler} from "../utils/handler";
+import {RegisteredMiddlewares} from "./middlewares";
 
 /**
  * @author SNIPPIK
@@ -310,14 +311,6 @@ export abstract class SubCommand extends BaseCommand {
         };
     };
 }
-
-/**
- * @author SNIPPIK
- * @description Все доступные ограничения
- * @type RegisteredMiddlewares
- * @public
- */
-export type RegisteredMiddlewares = "voice" | "queue" | "another_voice" | "player-not-playing" | "player-wait-stream" | "cooldown";
 
 /**
  * @author SNIPPIK
