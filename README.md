@@ -1,6 +1,6 @@
 # Simple framework for discord.js
 - Support: SlashCommand, Components (Buttons, Selectors), Middlewares, Events
-- Detail: Application User Commands, Guild Commands, Private Commands
+- Detail: Application User Commands, Guild Commands, Private Commands, User Commands
 
 
 ### Fast Example
@@ -10,16 +10,11 @@ import { Client } from "discord.js";
 import { DjsFramework } from "snpk-djs-framework";
 
 const client = new Client({
-    // Права бота
+    // Bot intents
     intents: [
-        // Доступ к серверам
         "Guilds",
-
-        // Отправление сообщений
         "GuildMessages",
         "DirectMessages",
-
-        // Нужен для голосовой системы
         "GuildVoiceStates",
     ]
 });

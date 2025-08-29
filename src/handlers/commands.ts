@@ -62,16 +62,16 @@ export class Commands extends handler<Command> {
      */
     public remove = (client: Client, guildID: string, CommandID: string) => {
         // Удаление приватной команды
-        this.unregisterRest(Routes.applicationGuildCommand(client.user.id, guildID, CommandID), client);
+        if (guildID) client.rest.delete(Routes.applicationGuildCommand(client.user.id, guildID, CommandID))
+            .catch(console.error);
 
         // Удаление глобальной команды
-        this.unregisterRest(Routes.applicationCommand(client.user.id, CommandID), client);
+        else client.rest.delete(Routes.applicationCommand(client.user.id, CommandID))
+            .catch(console.error);
     };
 
     /**
      * @description Регистрируем команды в эко системе discord
-     * @param client - Экземпляр клиента
-     * @param guildID - Для загрузки приватных (owner) команд на сервер
      * @public
      */
     public register = (client: Client, guildID?: string) => {
@@ -82,41 +82,21 @@ export class Commands extends handler<Command> {
         if (!this.files.size) throw new Error("Not loaded commands");
 
         // Загрузка глобальных команд
-        this.registerRest(Routes.applicationCommands(client.application.id), this.public, client);
+        client.application.commands.set(this.parseJsonData(this.public) as any)
+            .catch(console.error);
 
         // Загрузка приватных команд
-        if (guild) {
-            this.registerRest(Routes.applicationGuildCommands(client.application.id, guildID), this.owner, client);
-        }
-    };
-
-    /**
-     * @description Отправляем команды через rest клиента
-     * @param route - Путь запроса rest
-     * @param body - Команды для отправки
-     * @param client - Экземпляр клиента
-     * @private
-     */
-    private registerRest = (route: `/${string}`, body: Command[], client: Client) => {
-        const rest = client.rest;
-
-        rest.put(route, {
-            body: body ? body.map(cmd => cmd.toJSON()) : null
-        })
+        if (guild) guild.commands.set(this.parseJsonData(this.owner) as any)
             .catch(console.error);
     };
 
     /**
-     * @description Отправляем команды через rest клиента
-     * @param route - Путь запроса rest
-     * @param client - Экземпляр клиента
+     * @description Передаем только необходимые данные discord'у
+     * @param data - Все команды
      * @private
      */
-    private unregisterRest = (route: `/${string}`, client: Client) => {
-        const rest = client.rest;
-
-        rest.delete(route)
-            .catch(console.error);
+    private parseJsonData = (data: Command[]) => {
+        return data.map(cmd => cmd.toJSON());
     };
 }
 
