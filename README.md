@@ -4,7 +4,7 @@
 
 
 ### Fast Example
-- For more details see [here](.example)
+- For more details see [here](https://github.com/SNIPPIK/djs-framework/tree/main/.example)
 ```ts
 import { Client } from "discord.js";
 import { DjsFramework } from "snpk-djs-framework";
